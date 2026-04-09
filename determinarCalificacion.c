@@ -2,6 +2,7 @@
 
 char determinarcalificacion(int puntaje);
 void test();
+void PruebaUnitaria(int numPrueba, int nota, char letra);
 
 int main()
 {
@@ -16,58 +17,26 @@ int main()
     return(0);
 }
 
+void PruebaUnitaria(int numPrueba, int nota, char letra)
+{
+    char resultado = determinarcalificacion(nota);
+
+    if(resultado == letra)
+    {
+        printf("Test %d OK\n",numPrueba);
+    }else
+    {
+        printf("Test %d Fallo \n",numPrueba);
+    }
+}
+
 void test()
 {
-    if(determinarcalificacion(100)=='A')
-        printf("Test 1 OK\n");
-    else
-        printf("Test 1 Fallo\n");
-
-    if(determinarcalificacion(90)=='A')
-        printf("Test 2 OK\n");
-    else
-        printf("Test 2 Fallo\n");
-
-    if(determinarcalificacion(89)=='B')
-        printf("Test 3 OK\n");
-    else
-        printf("Test 3 Fallo\n");
-
-    if(determinarcalificacion(80)=='B')
-        printf("Test 4 OK\n");
-    else
-        printf("Test 4 Fallo\n");
-
-    if(determinarcalificacion(79)=='C')
-        printf("Test 5 OK\n");
-    else
-        printf("Test 5 Fallo\n");
-
-    if(determinarcalificacion(70)=='C')
-        printf("Test 6 OK\n");
-    else
-        printf("Test 6 Fallo\n");
-
-    if(determinarcalificacion(69)=='D')
-        printf("Test 7 OK\n");
-    else
-        printf("Test 7 Fallo\n");
-
-    if(determinarcalificacion(60)=='D')
-        printf("Test 8 OK\n");
-    else
-        printf("Test 8 Fallo\n");
-
-    if(determinarcalificacion(59)=='F')
-        printf("Test 9 OK\n");
-    else
-        printf("Test 9 Fallo\n");
-
-    if(determinarcalificacion(0)=='F')
-        printf("Test 10 OK\n");
-    else
-        printf("Test 10 Fallo\n");
-
+    PruebaUnitaria(1,100,'A');
+    PruebaUnitaria(2,80,'B');
+    PruebaUnitaria(3,70,'C');
+    PruebaUnitaria(4,60,'D');
+    PruebaUnitaria(5,50,'F');
 }
 
 char determinarcalificacion(int puntaje)
