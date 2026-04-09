@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int esBisiesto(int ano);
+int esBisiesto(int anio);
 
 int main()
 {
@@ -8,19 +8,19 @@ int main()
 
     if(resultado = 1)
     {
-        printf("El ano es bisiesto");
+        printf("Es bisiesto");
     }
     else
     {
-        printf("No es ano bisiesto");
+        printf("No es bisiesto");
     }
 
     return 0;
 }
 
-int esBisiesto(int ano)
+int esBisiesto(int anio)
 {
-    if(ano % 4 == 0 && ano % 100 != 0 || ano % 400 == 0)
+    if(anio / 4 == 0 && anio / 100 != 0 || anio / 400 == 0)
     {
         return 1;
     }
